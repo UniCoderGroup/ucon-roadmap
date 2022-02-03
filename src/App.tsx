@@ -415,13 +415,6 @@ export default function App() {
           y={50}
         />
         <Pkg
-          name="utty"
-          status="Active"
-          desc="A declaration of tty that supports UCon."
-          x={200}
-          y={50}
-        />
-        <Pkg
           name="nodeliketty"
           status="Active"
           desc="A declaration of tty that works like nodejs WriteStream."
