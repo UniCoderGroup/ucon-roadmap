@@ -2,7 +2,10 @@
   "name": "ucon-roadmap",
   "version": "1.0.0",
   "description": "The roadmap of UCon",
-  "keywords": ["ucon", "roadmap"],
+  "keywords": [
+    "ucon",
+    "roadmap"
+  ],
   "main": "src/index.tsx",
   "homepage": "/iframe/ucon-roadmap/",
   "dependencies": {
@@ -21,5 +24,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
