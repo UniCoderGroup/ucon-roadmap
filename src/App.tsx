@@ -2,6 +2,35 @@ import "./styles.css";
 import React from "react";
 import AppCode from "./images/AppCode.png";
 import AppOpt from "./images/AppOpt.png";
+import IconUCon from "./images/icons/ucon.svg";
+import IconUTty from "./images/icons/utty.svg";
+import IconUTtyNode from "./images/icons/utty-node.svg";
+import IconUTtyReact from "./images/icons/utty-react.svg";
+import IconUTtyVue from "./images/icons/utty-vue.svg";
+
+class Icon extends React.Component<{
+  icon: string;
+  x: number;
+  y: number;
+  scale?: number;
+}> {
+  render() {
+    let scale = this.props.scale ?? 1;
+    return (
+      <div
+        style={{
+          position: "relative",
+          left: this.props.x,
+          top: this.props.y,
+          transform: `scale(${scale},${scale})`,
+          transformOrigin: "left top",
+        }}
+      >
+        {this.props.icon === "" ? <></> : <img src={this.props.icon} />}
+      </div>
+    );
+  }
+}
 
 class Shield extends React.Component<{
   alt: string;
@@ -94,12 +123,13 @@ class VersionImg extends React.Component<{ name: string; isNA?: boolean }> {
 class Link extends React.Component<{
   href?: string;
   disable?: boolean;
+  style?: React.CSSProperties;
 }> {
   render() {
     if (this.props.disable) return this.props.children;
     return (
       <a
-        style={{ color: "unset", textDecoration: "unset" }}
+        style={{ color: "unset", textDecoration: "unset", ...this.props.style }}
         href={this.props.href}
       >
         {this.props.children}
@@ -115,9 +145,10 @@ class Pkg extends React.Component<{
   y: number;
   scale?: number;
   disableLink?: boolean;
+  icon?: string;
 }> {
   render() {
-    let scale = this.props.scale ? this.props.scale : 1;
+    let scale = this.props.scale ?? 1;
     return (
       <div
         style={{
@@ -140,11 +171,36 @@ class Pkg extends React.Component<{
             style={{
               backgroundColor: "#AAAAAA",
               borderRadius: "5px",
-              fontSize: 15,
-              textAlign: "center",
+              height: "25px",
+              position: "relative",
             }}
           >
-            {this.props.name}
+            {this.props.icon === undefined ? (
+              <></>
+            ) : (
+              <div
+                style={{
+                  backgroundColor: "#DDDDDD",
+                  borderRadius: "5px",
+                  position: "absolute",
+                  left: "0",
+                  top: "0",
+                  width: "25px",
+                  height: "25px",
+                }}
+              >
+                <Icon icon={this.props.icon ?? ""} x={0} y={0} scale={0.04} />
+              </div>
+            )}
+            <div
+              style={{
+                fontSize: 15,
+                textAlign: "center",
+                marginLeft: this.props.icon === undefined ? "unset" : "21px",
+              }}
+            >
+              {this.props.name}
+            </div>
           </div>
         </Link>
         <div
@@ -355,7 +411,7 @@ export default function App() {
       }}
     >
       <h1>UCON Roadmap</h1>
-      v1.0.0
+      v1.0.1
       <div
         style={{
           position: "relative",
@@ -411,6 +467,7 @@ export default function App() {
           name="utty"
           status="Active"
           desc="A declaration of tty that supports UCon."
+          icon={IconUTty}
           x={200}
           y={50}
         />
@@ -426,6 +483,7 @@ export default function App() {
           name="utty-node"
           status="Active"
           desc="An implement of utty for nodejs WriteStream."
+          icon={IconUTtyNode}
           x={130}
           y={270}
           scale={0.8}
@@ -434,6 +492,7 @@ export default function App() {
           name="utty-react"
           status="Designing"
           desc="An implement of utty for Reactjs."
+          icon={IconUTtyReact}
           x={220}
           y={270}
           scale={0.8}
@@ -442,6 +501,7 @@ export default function App() {
           name="utty-vue"
           status="Designing"
           desc="An implement of utty for Vuejs."
+          icon={IconUTtyVue}
           x={310}
           y={270}
           scale={0.8}
@@ -450,6 +510,7 @@ export default function App() {
           name="ucon"
           status="Developing"
           desc="The implement of UCon, with standard components."
+          icon={IconUCon}
           x={460}
           y={30}
         />
