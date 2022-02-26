@@ -210,7 +210,7 @@ class Pkg extends React.Component<{
         >
           {this.props.desc}
         </div>
-        <div style={{ position: "absolute", bottom: 0 }}>
+        <div style={{ position: "absolute", bottom: 0, lineHeight: "2px" }}>
           <StatusImg status={this.props.status} />
           <VersionImg
             isNA={this.props.status !== "Active"}
@@ -411,7 +411,7 @@ export default function App() {
       }}
     >
       <h1>UCON Roadmap</h1>
-      v1.0.1
+      v1.0.2
       <div
         style={{
           position: "relative",
@@ -527,54 +527,54 @@ export default function App() {
           height={100}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={450}
           y={250}
           scale={0.6}
           disableLink={true}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={520}
           y={250}
           scale={0.6}
           disableLink={true}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={590}
           y={250}
           scale={0.6}
           disableLink={true}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={450}
           y={350}
           scale={0.6}
           disableLink={true}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={520}
           y={350}
           scale={0.6}
           disableLink={true}
         />
         <Pkg
-          name="3rd-party-components"
+          name="3rd-party"
           status="N/A"
-          desc="UCon components from our community."
+          desc="Third-party UCon components from our community."
           x={590}
           y={350}
           scale={0.6}
